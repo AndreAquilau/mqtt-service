@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  mqtt-server:
+    build: .
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    environment:
+      - PORT=1883
+volumes:
+  data:
+  log:
